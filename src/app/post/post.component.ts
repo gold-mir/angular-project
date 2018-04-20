@@ -31,4 +31,12 @@ export class PostComponent implements OnInit {
   setEditing(editing:boolean){
     this.editing = editing;
   }
+
+  editPost(data){
+    console.log(data);
+    if(data.edited === true){
+      this.post.body = data.text;
+    }
+    this.editing = false;
+  }
 }

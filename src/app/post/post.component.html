@@ -3,4 +3,4 @@
 
 <button *ngIf="editing === false" type="button" name="button" (click)="setEditing(true)">Edit</button>
 
-<app-post-edit *ngIf ="editing === true" [post]="post" (editFinished)="setEditing(false)"></app-post-edit>
+<app-post-edit *ngIf ="editing === true" [post]="post" (editFinished)="editPost($event)"></app-post-edit>

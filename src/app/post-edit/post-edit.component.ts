@@ -19,11 +19,11 @@ export class PostEditComponent implements OnInit {
   }
 
   onEditFinished(){
-    console.log(this.text);
+    this.editFinished.emit({text: this.text, edited: true});
   }
 
   onEditCancel(){
-
+    this.editFinished.emit({text:this.text, edited: false});
   }
 
 }
