@@ -33,7 +33,6 @@ export class PostComponent implements OnInit {
   }
 
   editPost(data){
-    console.log(data);
     if(data.edited === true){
       this.post.body = data.text;
     }
