@@ -1,6 +1,2 @@
-<h2>{{post.title}}</h2>
-<p>{{post.body}}</p>
-
-<button *ngIf="editing === false" type="button" name="button" (click)="setEditing(true)">Edit</button>
-
-<app-post-edit *ngIf ="editing === true" [post]="post" (editFinished)="editPost($event)"></app-post-edit>
+<app-post-view *ngIf="editing === false" [post]="post" (editButtonClicked)="setEditing(true)"></app-post-view>
+<app-post-edit *ngIf="editing === true" [post]="post" (editFinished)="editPost($event)"></app-post-edit>

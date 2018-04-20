@@ -1,6 +1,7 @@
 <textarea name="name" rows="8" cols="80"
 [(ngModel)]="text">{{post.body}}
 </textarea>
-
-<button type="button" name="button" (click)="onEditFinished()">Save</button>
-<button type="button" name="button" (click)="onEditCancel()">Cancel</button>
+<div class="button-container">
+  <button type="button" name="button" (click)="onEditFinished()">Save</button>
+  <button type="button" name="button" (click)="onEditCancel()">Cancel</button>
+</div>

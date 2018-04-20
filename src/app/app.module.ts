@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { PostViewComponent } from './post-view/post-view.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PostEditComponent } from './post-edit/post-edit.component';
     AppComponent,
     PostComponent,
     PostListComponent,
-    PostEditComponent
+    PostEditComponent,
+    PostViewComponent
   ],
   imports: [
     BrowserModule,
