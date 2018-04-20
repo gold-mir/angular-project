@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { routing } from './app.routing';
 
 
 import { AppComponent } from './app.component';
@@ -14,7 +15,8 @@ import { PostListComponent } from './post-list/post-list.component';
     PostListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
