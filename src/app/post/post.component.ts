@@ -13,6 +13,7 @@ import { PostService } from '../post.service';
 export class PostComponent implements OnInit {
   postId: number = null;
   post: Post = null;
+  editing = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,5 +26,9 @@ export class PostComponent implements OnInit {
       this.postId = parseInt(urlParameters['id']);
     });
     this.post = this.postService.getByID(this.postId);
+  }
+
+  setEditing(editing:boolean){
+    this.editing = editing;
   }
 }
