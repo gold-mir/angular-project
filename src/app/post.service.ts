@@ -21,8 +21,12 @@ export class PostService {
     return this.posts;
   }
 
-  getByID(id: number){
+  addPost(post: Post){
+    this.posts.push(post);
+  }
 
+  getByID(id: number){
+    return null;
   }
 
 }

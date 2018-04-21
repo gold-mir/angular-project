@@ -10,20 +10,24 @@ export class PostEditComponent implements OnInit {
 
   @Input() post: Post;
   @Output() editFinished = new EventEmitter();
-  text:string = null;
+  @Output() editCancelled = new EventEmitter();
+
+  newText:string = null;
+  newTitle:string = null;
 
   constructor() { }
 
   ngOnInit() {
-    this.text = this.post.body;
+    this.newText = this.post.body;
+    this.newTitle = this.post.title;
   }
 
   onEditFinished(){
-    this.editFinished.emit({text: this.text, edited: true});
+    this.editFinished.emit({title: this.newTitle, text: this.newText});
   }
 
   onEditCancel(){
-    this.editFinished.emit({text:this.text, edited: false});
+    this.editCancelled.emit();
   }
 
 }
