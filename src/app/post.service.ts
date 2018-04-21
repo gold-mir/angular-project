@@ -29,4 +29,9 @@ export class PostService {
     return this.database.object(`posts/${id}`);
   }
 
+  updatePost(postID, newData){
+    let dbPost = this.getByID(postID);
+    dbPost.update({title: newData.title, body: newData.body});
+  }
+
 }

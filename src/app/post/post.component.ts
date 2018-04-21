@@ -34,7 +34,7 @@ export class PostComponent implements OnInit {
   }
 
   editPost(data){
-    // this.post.title = data.title;
-    // this.post.body = data.body;
+    this.postService.updatePost(this.postId, data);
+    this.setEditing(false);
   }
 }
