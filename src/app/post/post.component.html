@@ -1,6 +1,8 @@
-<app-post-view *ngIf="editing === false" [post]="post" (editButtonClicked)="setEditing(true)"></app-post-view>
-<app-post-edit
-*ngIf="editing === true"
-[post]="post"
-(editFinished)="editPost($event)"
-(editCancelled)="setEditing(false)"></app-post-edit>
+<div *ngIf="(post | async) as postLoaded">
+  <app-post-view *ngIf="editing === false" [post]="postLoaded" (editButtonClicked)="setEditing(true)"></app-post-view>
+  <app-post-edit
+  *ngIf="editing === true"
+  [post]="postLoaded"
+  (editFinished)="editPost($event)"
+  (editCancelled)="setEditing(false)"></app-post-edit>
+</div>

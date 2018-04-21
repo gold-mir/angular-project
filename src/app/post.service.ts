@@ -25,8 +25,8 @@ export class PostService {
     this.posts.push(post);
   }
 
-  getByID(id: number){
-    return null;
+  getByID(id: string){
+    return this.database.object(`posts/${id}`);
   }
 
 }

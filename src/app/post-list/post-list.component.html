@@ -1,5 +1,5 @@
 <ul>
   <li *ngFor="let post of posts | async">
-    <a routerLink="/posts/view/{{post.id}}">{{post.title}}</a>
+    <a routerLink="/posts/view/{{post.$key}}">{{post.title}}</a>
   </li>
 </ul>

@@ -3,6 +3,7 @@ import { Post } from '../models/post.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { PostService } from '../post.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-post',
@@ -11,8 +12,8 @@ import { PostService } from '../post.service';
   providers: [PostService]
 })
 export class PostComponent implements OnInit {
-  postId: number = null;
-  post: Post = null;
+  postId: string = null;
+  post: FirebaseObjectObservable<any> = null;
   editing = false;
 
   constructor(
@@ -23,7 +24,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit(){
     this.route.params.forEach((urlParameters) => {
-      this.postId = parseInt(urlParameters['id']);
+      this.postId = urlParameters['id'];
     });
     this.post = this.postService.getByID(this.postId);
   }
@@ -33,7 +34,7 @@ export class PostComponent implements OnInit {
   }
 
   editPost(data){
-    this.post.title = data.title;
-    this.post.body = data.body;
+    // this.post.title = data.title;
+    // this.post.body = data.body;
   }
 }

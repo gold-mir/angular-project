@@ -23,7 +23,6 @@ export class NewPostComponent implements OnInit {
   onPostSave(data){
     this.post.title = data.title;
     this.post.body = data.body;
-    console.log(this.post);
     this.postService.addPost(this.post);
   }
 
