@@ -23,7 +23,7 @@ export class PostEditComponent implements OnInit {
   }
 
   onEditFinished(){
-    this.editFinished.emit({title: this.newTitle, text: this.newText});
+    this.editFinished.emit({title: this.newTitle, body: this.newText});
   }
 
   onEditCancel(){

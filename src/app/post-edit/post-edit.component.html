@@ -1,6 +1,12 @@
-<textarea name="name" rows="8" cols="80"
-[(ngModel)]="text">{{post.body}}
-</textarea>
+<div>
+  <input type="text" name="" value="{{post.title}}" placeholder="Post Title"
+  [(ngModel)]="newTitle">
+</div>
+<div>
+  <textarea name="name" rows="8" cols="80" placeholder="Post Body" [(ngModel)]="newText">
+    {{post.body}}
+  </textarea>
+</div>
 <div class="button-container">
   <button type="button" name="button" (click)="onEditFinished()">Save</button>
   <button type="button" name="button" (click)="onEditCancel()">Cancel</button>

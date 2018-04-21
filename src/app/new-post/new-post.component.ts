@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
+import { Post } from '../models/post.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-new-post',
@@ -9,14 +12,23 @@ import { PostService } from '../post.service';
 })
 export class NewPostComponent implements OnInit {
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router) { }
+
+  post: Post = null;
 
   ngOnInit() {
-
+    this.post = new Post("", "");
   }
 
-  onPostSave(){
-    
+  onPostSave(data){
+    this.post.title = data.title;
+    this.post.body = data.body;
+    console.log(this.post);
+    this.postService.addPost(this.post);
+  }
+
+  onCancel(){
+    this.router.navigate(['posts']);
   }
 
 }
