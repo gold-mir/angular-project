@@ -22,7 +22,8 @@ export class PostService {
   }
 
   addPost(post: Post){
-    this.posts.push(post);
+    let newItem = this.posts.push(post);
+    return newItem;
   }
 
   getByID(id: string){

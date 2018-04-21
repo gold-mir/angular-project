@@ -23,7 +23,10 @@ export class NewPostComponent implements OnInit {
   onPostSave(data){
     this.post.title = data.title;
     this.post.body = data.body;
-    this.postService.addPost(this.post);
+    this.postService.addPost(this.post).then((result)=> {
+      let key = result.key;
+      this.router.navigate(['posts/view', key]);
+    });
   }
 
   onCancel(){

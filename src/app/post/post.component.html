@@ -1,3 +1,5 @@
+<a routerLink="/posts">Back</a>
+
 <div *ngIf="(post | async) as postLoaded">
   <app-post-view *ngIf="editing === false" [post]="postLoaded" (editButtonClicked)="setEditing(true)"></app-post-view>
   <app-post-edit
